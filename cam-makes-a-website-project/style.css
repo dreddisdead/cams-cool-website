@@ -39,11 +39,11 @@
  /* figure out footer */
 .footer {
   background-color: hsl(0, 0%, 0%);
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 1;
+  padding: 20px;
 }
 
 .footerContainer {
@@ -61,11 +61,11 @@
   padding: 10px;
   background-color: white;
   margin: 10px;
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 .socialIcons a i {
-  font-size: 2em;
+  font-size: 1.5em;
   color: black;
   opacity: 0.9;
 }
@@ -111,14 +111,13 @@
 }
 
 .footerBottom p {
-  color: white;
+  color: rgb(214, 214, 214);
 }
 
 .designer {
   opacity: 0.7;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: 400;
+  font-weight: 200;
   margin: 0px 5px;
 }
 
@@ -174,6 +173,10 @@ header {
   padding: 4rem;
   margin-bottom: var(--spacing);
   border-radius: 1.2rem;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 section {
