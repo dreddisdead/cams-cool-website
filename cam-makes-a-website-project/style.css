@@ -36,7 +36,7 @@
   z-index: 100;
 
 }
- /* figure out footer */
+
 .footer {
   background-color: hsl(0, 0%, 0%);
   position: absolute;
@@ -62,46 +62,26 @@
   background-color: white;
   margin: 10px;
   border-radius: 10%;
+  transition: 0.5s ease-out 0.12s;
 }
 
 .socialIcons a i {
   font-size: 1.5em;
   color: black;
   opacity: 0.9;
+  transition: 0.5s ease-out 0.12s;
 }
 
 /* Hover effect for social icons */
 .socialIcons a:hover {
   background-color: #111;
-  transition: 0.5s;
+  transform: translateY(-10px);
+  transition: 0.5s ease-out;
 }
 
 .socialIcons a:hover i {
   color: white;
-  transition: 0.5s;
-}
-
-.footerNav {
-  margin: 0px;
-}
-
-.footerNav ul {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-}
-
-.footerNav ul li a{
-  color: white;
-  margin: 20px;
-  text-decoration: none;
-  font-size: 1.3em;
-  opacity: 0.7;
-  transition: 0.5s;
-}
-
-.footerNav ul li a:hover {
-  opacity: 1;
+  transition: 0.5s ease-out;
 }
 
 .footerBottom {
@@ -119,17 +99,6 @@
   letter-spacing: 1px;
   font-weight: 200;
   margin: 0px 5px;
-}
-
-@media (max-width: 700px){
-  .footerNav ul {
-    flex-direction: column;
-  }
-  .footerNav ul li {
-    width: 100%;
-    text-align: center;
-    margin: 10px;
-  }
 }
 
 canvas {
