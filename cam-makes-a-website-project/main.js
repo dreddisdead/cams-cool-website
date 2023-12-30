@@ -6,7 +6,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
@@ -22,14 +22,14 @@ renderer.render(scene, camera);
 // Torus
 
 const geometry = new THREE.TorusKnotGeometry(20, 1, 100, 16);
-const material = new THREE.MeshStandardMaterial({ color: 0xffffff, wireframe: true});
+const material = new THREE.MeshStandardMaterial({ color: 0xffffff});
 const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
 
 // Lights
 
-const pointLight = new THREE.PointLight(0xffffff, 10, 100);
+const pointLight = new THREE.PointLight(0xffffff, 10, 500);
 pointLight.position.set(-10, 5, 10);
 
 const ambientLight = new THREE.AmbientLight(0xffffff);
@@ -37,11 +37,13 @@ scene.add(pointLight, ambientLight);
 
 // Helpers
 
-// const lightHelper = new THREE.PointLightHelper(pointLight)
-// const gridHelper = new THREE.GridHelper(200, 50);
-// scene.add(lightHelper, gridHelper)
+const lightHelper = new THREE.PointLightHelper(pointLight)
+const gridHelper = new THREE.GridHelper(200, 50);
+scene.add(lightHelper, gridHelper)
 
-// const controls = new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
+
+// Stars
 
 function addStar() {
   const geometry = new THREE.SphereGeometry(0.25, 24, 24);
@@ -60,12 +62,31 @@ Array(200).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('space.jpg'); // link: https://chandra.harvard.edu/photo/4k_images.html
+// --- simple way to load texture ---
+// const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+// scene.background = spaceTexture;
+
+// --- better way to load texture ---
+const loader = new THREE.TextureLoader();
+const spaceTexture = loader.load('space2.jpg', function(texture) {
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.magFilter = THREE.NearestFilter;
+  texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+});
+
 scene.background = spaceTexture;
 
 // Avatar
 
-const camTexture = new THREE.TextureLoader().load('cam.png');
+// --- simple way to load texture ---
+// const camTexture = new THREE.TextureLoader().load('cam.png');
+
+// --- better way to load texture ---
+const camTexture = loader.load('cam.png', function(texture) {
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.magFilter = THREE.NearestFilter;
+  texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+});
 
 const cam = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: camTexture }));
 
