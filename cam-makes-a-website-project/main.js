@@ -70,7 +70,7 @@ Array(300).fill().forEach( addStar );
 
 // --- better way to load texture ---
 const loader = new THREE.TextureLoader();
-const spaceTexture = loader.load('space2.jpg', function( texture ) {
+const spaceTexture = loader.load('space.jpg', function( texture ) {
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.magFilter = THREE.NearestFilter;
   texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
