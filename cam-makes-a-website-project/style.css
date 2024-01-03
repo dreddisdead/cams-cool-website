@@ -179,6 +179,14 @@ blockquote p {
   grid-column: 6 / 12;
 }
 
+.left ul li a:visited {
+  color: #ffffff;
+}
+
+.left p a:visited {
+  color: #ffffff;
+}
+
 .project-list {
   width: auto;
   border-bottom: 20px solid #ffffff;
@@ -262,3 +270,4 @@ blockquote p {
 .project-list ul li a:visited {
   color: #ffffff;
 }
+
