@@ -108,8 +108,8 @@ const moon = new THREE.Mesh(
 
 scene.add( moon );
 
-moon.position.z = 34.5;
-moon.position.y = -6;
+moon.position.z = 33.5;
+moon.position.y = -5;
 moon.position.x = -18;
 
 cam.position.z = -5;
