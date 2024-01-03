@@ -39,11 +39,11 @@ scene.add(pointLight, ambientLight);
 
 // Helpers
 
-const lightHelper = new THREE.PointLightHelper( pointLight )
-const gridHelper = new THREE.GridHelper( 200, 50 );
-scene.add( lightHelper, gridHelper )
+// const lightHelper = new THREE.PointLightHelper( pointLight )
+// const gridHelper = new THREE.GridHelper( 200, 50 );
+// scene.add( lightHelper, gridHelper )
 
-const controls = new OrbitControls( camera, renderer.domElement );
+// const controls = new OrbitControls( camera, renderer.domElement );
 
 // Stars
 
@@ -108,9 +108,9 @@ const moon = new THREE.Mesh(
 
 scene.add( moon );
 
-moon.position.z = 30;
+moon.position.z = 34.5;
 moon.position.y = -6;
-moon.position.x = -16;
+moon.position.x = -18;
 
 cam.position.z = -5;
 cam.position.x = 2;
@@ -141,6 +141,8 @@ function animate() {
   moon.rotation.x += 0.005;
 
   cam.rotation.y += 0.01;
+  cam.rotation.x += 0.001;
+  cam.rotation.z += 0.001;
 
   // controls.update();
 
