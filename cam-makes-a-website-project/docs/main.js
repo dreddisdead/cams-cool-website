@@ -1,6 +1,9 @@
-import './style.css';
+import './styles.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import moon_img from './moon.jpg';
+import space_img from './space.jpg';
+import cam_img from './cam.png';
 
 // Setup
 
@@ -70,7 +73,7 @@ Array(300).fill().forEach( addStar );
 
 // --- better way to load texture ---
 const loader = new THREE.TextureLoader();
-const spaceTexture = loader.load('space.jpg', function( texture ) {
+const spaceTexture = loader.load( space_img, function( texture ) {
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.magFilter = THREE.NearestFilter;
   texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
@@ -84,7 +87,7 @@ scene.background = spaceTexture;
 // const camTexture = new THREE.TextureLoader().load('cam.png');
 
 // --- better way to load texture ---
-const camTexture = loader.load('cam.png', function( texture ) {
+const camTexture = loader.load( cam_img, function( texture ) {
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.magFilter = THREE.NearestFilter;
   texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
@@ -96,7 +99,7 @@ scene.add( cam );
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
+const moonTexture = new THREE.TextureLoader().load( moon_img );
 
 
 const moon = new THREE.Mesh(
@@ -108,7 +111,7 @@ const moon = new THREE.Mesh(
 
 scene.add( moon );
 
-moon.position.z = 33.5;
+moon.position.z = 35;
 moon.position.y = -5;
 moon.position.x = -18;
 
