@@ -1,9 +1,8 @@
 import './styles.css';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import moon_img from './moon.jpg';
-import space_img from './space5.jpg';
-import cam_img from './cam.jpg';
+import moon_img from './images/moon.jpg';
+import space_img from './images/space5.jpg';
+import cam_img from './images/cam.jpg';
 
 // Setup
 
