@@ -2,8 +2,8 @@ import './styles.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import moon_img from './moon.jpg';
-import space_img from './space.jpg';
-import cam_img from './cam.png';
+import space_img from './space5.jpg';
+import cam_img from './cam.jpg';
 
 // Setup
 
@@ -24,7 +24,7 @@ renderer.render( scene, camera );
 
 // Torus
 
-const geometry = new THREE.TorusKnotGeometry( 20, 1, 100, 16 );
+const geometry = new THREE.TorusGeometry( 25, 0.05, 20, 100 );
 const material = new THREE.MeshStandardMaterial({ color: 0xffffff});
 const torus = new THREE.Mesh( geometry, material );
 
@@ -79,7 +79,7 @@ const spaceTexture = loader.load( space_img, function( texture ) {
   texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
 });
 
-scene.background = spaceTexture;
+// scene.background = spaceTexture;
 
 // Avatar
 
@@ -116,7 +116,12 @@ moon.position.y = -5;
 moon.position.x = -18;
 
 cam.position.z = -5;
-cam.position.x = 2;
+cam.position.y = 0.5;
+cam.position.x = 3;
+
+torus.position.z = -5;
+torus.position.y = 0.5;
+torus.position.x = 3;
 
 // Scroll Animation
 
@@ -137,13 +142,13 @@ moveCamera();
 function animate() {
   requestAnimationFrame( animate );
 
-  torus.rotation.x += 0.01;
+  torus.rotation.x += 0.001;
   torus.rotation.y += 0.005;
-  torus.rotation.z += 0.01;
+  torus.rotation.z += 0.001;
 
   moon.rotation.x += 0.005;
 
-  cam.rotation.y += 0.01;
+  cam.rotation.y += 0.005;
   cam.rotation.x += 0.001;
   cam.rotation.z += 0.001;
 
