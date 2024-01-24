@@ -19,6 +19,15 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 camera.position.z = 30;
 camera.position.x = -3;
 
+// Check for resize of window
+window.addEventListener( 'resize', () => {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  renderer.setSize( width, height );
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+});
+
 renderer.render( scene, camera );
 
 // Torus
