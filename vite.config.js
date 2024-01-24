@@ -3,6 +3,5 @@ export default {
   build: {
     outDir: '../public'
   },
-  base: '/cams-cool-website/',
-  assetsInclude: "**/*.PNG"
+  base: '/cams-cool-website/'
 };
