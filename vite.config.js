@@ -4,5 +4,5 @@ export default {
   build: {
     outDir: '../public'
   },
-  base: '/cams-cool-website/',
+  base: '/',
 };
