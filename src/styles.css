@@ -308,6 +308,32 @@ blockquote p {
   bottom: -400px;
 }
 
+.project-list .image-container-2 {
+  display: none; /* Hide the image by default */
+  /* scale: 0.7; */
+}
+
+.project-list ul li:hover .image-container-2 {
+  display: block; /* Show the image when the user hovers over the list item */
+  /* set to the right of the list item */
+  position: absolute;
+  left: 700px;
+  bottom: -140px;
+}
+
+.project-list .image-container-3 {
+  display: none; /* Hide the image by default */
+  /* scale: 0.7; */
+}
+
+.project-list ul li:hover .image-container-3 {
+  display: block; /* Show the image when the user hovers over the list item */
+  /* set to the right of the list item */
+  position: absolute;
+  left: 700px;
+  bottom: -140px;
+}
+
 .project-list ul li:hover a:visited {
   color: #000000;
 }
