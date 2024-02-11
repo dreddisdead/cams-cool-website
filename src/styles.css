@@ -120,7 +120,7 @@ canvas {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --spacing: 350px;
 
-  font-family: consolas, sans-serif;
+  font-family:  monospace, sans-serif;
   font-style: normal;
 }
 
@@ -145,11 +145,13 @@ h1, h2, h3 {
 
 header {
   background: var(--dark-bg);
-  grid-column: 2 / span 6;
+  grid-column: 2 / span 5;
   font-size: 1.5rem;
   padding: 2rem;
   margin-bottom: var(--spacing);
   border-radius: 1.2rem;
+  border-style: inset;
+  border-color: #ffffff;
 }
 
 html, body {
@@ -169,6 +171,8 @@ section {
   line-height: 1.5;
   margin-bottom: var(--spacing);
   border-radius: 1.2rem;
+  border-style: inset;
+  border-color: #ffffff;
 }
 
 blockquote {
@@ -176,6 +180,7 @@ blockquote {
   padding: 0;
   grid-column: 3 / span 8;
   margin-bottom: var(--spacing);
+  border-radius: 1.2rem;
 }
 
 blockquote p a:visited {
@@ -208,6 +213,18 @@ blockquote p {
   border-radius: 1.2rem;
 }
 
+.light h2 {
+  margin: auto;
+}
+
+.light p {
+  text-align: justify;
+}
+
+.left h2 {
+  margin: auto;
+}
+
 .left {
   grid-column: 7 / 12;
 }
@@ -230,6 +247,7 @@ blockquote p {
 .project-list h2 {
   color: #000000;
   background-color: #ffffff;
+  margin: auto;
   padding: 10px 20px;
   font-size: 20px;
   font-weight: 700;
@@ -317,7 +335,7 @@ blockquote p {
   display: block; /* Show the image when the user hovers over the list item */
   /* set to the right of the list item */
   position: absolute;
-  left: 700px;
+  left: 800px;
   bottom: -140px;
 }
 
@@ -330,7 +348,7 @@ blockquote p {
   display: block; /* Show the image when the user hovers over the list item */
   /* set to the right of the list item */
   position: absolute;
-  left: 700px;
+  left: 800px;
   bottom: -140px;
 }
 
@@ -392,6 +410,7 @@ blockquote p {
 
   .left h2 {
     font-size: 1.5rem;
+    margin: auto;
   }
 
   .left h3 {
@@ -409,24 +428,24 @@ blockquote p {
 
 @media (max-width: 1129px) {
   .header__name {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .header__title {
-    font-size: .75rem;
+    font-size: 1rem;
   }
 
   .header__p {
-    font-size: .75rem;
+    font-size: 1rem;
   }
 
   .bq__p {
-    font-size: .5rem; 
+    font-size: .7rem; 
     width: 100%;
   }
 
   .bq__s {
-    font-size: .5rem;
+    font-size: .7rem;
     width: 100%;
   }
 
@@ -439,40 +458,44 @@ blockquote p {
   }
 
   .about__title {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    margin: auto;
   }
 
   .about__p1,
   .about__p2 {
-    font-size: .5rem;
+    font-size: .75rem;
+    text-align: justify;
   }
 
   .project-list h2 {
-    font-size: .75rem;
+    font-size: 1.5rem;
   }
 
   .project-list ul li {
-    font-size: .5rem;
+    font-size: .8rem;
   }
 
   .quote a {
-    font-size: .5rem;
+    font-size: .6rem;
   }
 
   .left h2 {
-    font-size: .75rem;
+    font-size: 1.5rem;
   }
 
   .left h3 {
-    font-size: .75rem;
+    font-size: 1rem;
   }
 
   .left p {
-    font-size: .5rem;
+    font-size: .9rem;
+    text-align: justify;
+
   }
 
   .left ul li {
-    font-size: .5rem;
+    font-size: 1rem;
   }
 
   .left {
@@ -483,7 +506,14 @@ blockquote p {
     grid-column: 2 / span 10;
   }
 
+  blockquote p {
+    font-size: 1rem;
+  }
+
   .light {
     grid-column: 2 / span 10;
+    padding: 20px;
   }
+
+  
 }
