@@ -2,7 +2,7 @@ import './styles.css';
 import * as THREE from 'three';
 import moon_img from './images/moon.jpg';
 import space_img from './images/space5.jpg';
-import cam_img from './images/cam.jpg';
+import cam_img from './images/cam2.jpg';
 
 // Setup
 
@@ -123,7 +123,7 @@ moon.position.z = 35;
 moon.position.y = -5;
 moon.position.x = -18;
 
-cam.position.z = -5;
+cam.position.z = -7;
 cam.position.y = 0.5;
 cam.position.x = 3;
 
